@@ -1,5 +1,6 @@
 package kr.pe.chani.simplemsa.service1.discovery;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Service;
@@ -8,10 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class DiscoveryService {
 
-    @Autowired
-    private DiscoveryClient discoveryClient;
+    private final DiscoveryClient discoveryClient;
 
     public List getServices(){
         List<String> services = new ArrayList<String>();
